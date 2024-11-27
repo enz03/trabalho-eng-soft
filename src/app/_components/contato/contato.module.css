@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.title {
+    display: flex;
+    background-color: #369396;
+    text-align: center;
+    margin-top: 8px;
+    padding: 50px;
+    justify-content: center;
+}
+
+.h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.linha1, .linha2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.linha2 {
+    margin-bottom: 70px;
+}
+
+.nome1, .nome2, .nome3, .nome4, .nome5, .nome6 {
+    color: #369396;
+    margin-top: 7px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pessoa2, .pessoa5 {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.matricula1, .matricula2, .matricula3, .matricula4, .matricula5, .matricula6 {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 11px;
+}
