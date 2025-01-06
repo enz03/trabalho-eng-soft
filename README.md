@@ -24,15 +24,8 @@ Este repositório contém o código-fonte e a documentação do nosso projeto de
 ```
 pnpm install
 ```
-2. Crie um arquivo .env local na raiz do projeto Next.js e adicione as seguintes variáveis de ambiente:
 
-```
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-DATABASE_URL=your_database_url
-NEXTAUTH_URL=http://localhost:3001
-```
-3. Inicie seu servidor local (na porta 3001)
+2. Inicie seu servidor local (na porta 3001)
 ```
 pnpm dev
 ```
