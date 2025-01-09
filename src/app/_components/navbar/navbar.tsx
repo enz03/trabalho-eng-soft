@@ -9,9 +9,10 @@ export default function Navbar() {
                 <div className={styles.content}>
                     <Link href="./page.tsx" className={styles.logo}> <Image src="/favicon.ico" alt="logo" width={115} height={50}/></Link>
                     <span>
-                        <Link href="/Login" className={styles.linkLog}>Entrar</Link>
+                        <Link href="/login" className={styles.linkLog}>Entrar</Link>
+                        <Link href="/cadastro" className={styles.linkLog}>Cadastre-se</Link>
                         <Link href="/contato" className={styles.linkCont}>Contato</Link>
-                        <Link href="/Restaurantes" className={styles.linkRest}>Restaurantes</Link>
+                        <Link href="/restaurants" className={styles.linkRest}>Restaurantes</Link>
                     </span>
                 </div>
                 <div className={styles.divider}></div>

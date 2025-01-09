@@ -14,7 +14,7 @@ export default function GoogleLoginComponent() {
             signIn('google', { credential: credentialResponse.credential });
           }}
           onError={() => {
-            console.log('Login Failed');
+            console.log('Login Failed');    
           }}
         />
       ) : (
