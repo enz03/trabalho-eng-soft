@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* pagina */
+.main {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+.container {
+  margin: auto;
+  margin-top: 3.5rem;
+  max-width: 320px;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+
+/* titulo */
+.heading {
+  margin-bottom: 40px;
+  color: #369396;
+  font-size: 20px;
+  font-weight: 650;
+}
+
+
+/* google */
+.botaoGoogle {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.buttonInGoogle {
+  width: 100%;
+  color: black;
+  font-weight: 500;
+  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.logoGoogle {
+  float: left;
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+
+/* divider */
+.dividerOu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 20px;
+}
+
+.divider {
+  flex-grow: 1;
+  height: 0.5px;
+  background-color: black
+}
+
+.ou {
+  font-size: 11px;
+}
+
+
+/* form */
+.nome {
+  font-size: 12px;
+  float: left;
+  margin-bottom: 5px;
+}
+
+.usuario input,
+.senha input {
+  width: 100%; 
+  padding: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.entrar input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #369396;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+
+/* cadastro */
+.span {
+  margin-bottom: 50px; 
+}
+
+.link {
+  text-decoration: underline;
+  font-size: 11px;
+}

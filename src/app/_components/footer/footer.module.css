@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.main {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    padding: 6px;
+    background-color: #369396;
+}
+
+.texti {
+    font-size: 9px;
+    color: white;
+    margin: 7;
+}
+
+.textii {
+    font-size: 10px;
+    color: white;
+    margin: 7;
+}
