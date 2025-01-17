@@ -13,6 +13,7 @@ export default function Navbar() {
                         <Link href="/cadastro" className={styles.linkLog}>Cadastre-se</Link>
                         <Link href="/contato" className={styles.linkCont}>Contato</Link>
                         <Link href="/restaurants" className={styles.linkRest}>Restaurantes</Link>
+                        <Link href="/create_restaurant" className={styles.linkRest}>Criar Restaurante</Link>
                     </span>
                 </div>
                 <div className={styles.divider}></div>
