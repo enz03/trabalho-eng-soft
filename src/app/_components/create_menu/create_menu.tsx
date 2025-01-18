@@ -1,16 +1,39 @@
 "use client";
 import styles from './create_menu.module.css';
-import { signIn, signOut, useSession } from "next-auth/react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+interface Restaurant {
+  id: number;
+  name: string;
+}
 
 export default function CadastroMenu() {
   const [formData, setFormData] = useState({
-    restaurant_id: '', // Mantido para associar o menu ao restaurante
-    user_id: 41,       // Mantido o ID do usuário
+    restaurant_id: '', // Associar o menu ao restaurante
+    user_id: 41,       // ID do usuário mantido fixo
     name: '',
     description: '',
     price: '',
   });
+
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch restaurantes ao carregar a página
+  useEffect(() => {
+    fetch('/api/restaurants/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Erro HTTP! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setRestaurants(data))
+      .catch(error => {
+        console.error('Erro ao carregar restaurantes:', error);
+        setError(error.message);
+      });
+  }, []);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -62,14 +85,19 @@ export default function CadastroMenu() {
         <form onSubmit={handleSubmit}>
           <p className={styles.nome}>Selecione o restaurante:</p>
           <div className={styles.usuario}>
-            <input
-              type="text"
+            <select
               name="restaurant_id"
               value={formData.restaurant_id}
               onChange={handleChange}
-              placeholder="ID do restaurante"
-              autoComplete="off"
-            />
+              required
+            >
+              <option value="">Escolha um restaurante</option>
+              {restaurants.map((restaurant) => (
+                <option key={restaurant.id} value={restaurant.id}>
+                  {restaurant.name}
+                </option>
+              ))}
+            </select>
           </div>
 
           <p className={styles.nome}>Escreva o nome do menu:</p>
@@ -111,6 +139,7 @@ export default function CadastroMenu() {
             <input type="submit" value="Criar" />
           </div>
         </form>
+        {error && <p style={{ color: 'red' }}>Erro: {error}</p>}
       </div>
     </main>
   );
