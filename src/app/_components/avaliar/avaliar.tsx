@@ -13,7 +13,7 @@ export default function Cadastro() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h1 className={styles.heading}>Você está avaliando o restaurante (aqui apareceria o restaurante)</h1>
+        <h1 className={styles.heading}>Você está avaliando o restaurante ()</h1>
         <div className={styles.dividerOu}>
 
         </div>

@@ -12,7 +12,7 @@ export default function RestaurantesPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/restaurants')
+    fetch('/api/restaurants/')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
