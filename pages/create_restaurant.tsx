@@ -2,7 +2,7 @@ import Create_restaurant from "../src/app/_components/create_restaurant/create_r
 import Navbar from "../src/app/_components/navbar/navbar";
 import Footer from "../src/app/_components/footer/footer";
 
-export default function CadastroPage() {
+export default function CreateRestaurantPage() {
   return (
     <div>
       <Navbar />
