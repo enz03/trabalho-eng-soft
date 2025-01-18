@@ -80,8 +80,17 @@
   margin-bottom: 5px;
 }
 
+.usuario input,
+.senha input {
+  width: 100%; 
+  padding: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 
-.avaliacao textarea {
+.descricao textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -91,7 +100,6 @@
   min-height: 150px; /* Ajuste a altura mínima */
   resize: vertical; /* Permite redimensionar verticalmente */
 }
-
 
 .entrar input[type="submit"] {
     width: 100%;

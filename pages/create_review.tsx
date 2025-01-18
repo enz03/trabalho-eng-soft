@@ -1,12 +1,12 @@
-import Avaliar from "../src/app/_components/avaliar/avaliar";
+import Create_review from "../src/app/_components/create_review/create_review";
 import Navbar from "../src/app/_components/navbar/navbar";
 import Footer from "../src/app/_components/footer/footer";
 
-export default function AvaliarPage() {
+export default function CreateRestaurantPage() {
   return (
     <div>
       <Navbar />
-      <Avaliar />
+      <Create_review />
       <Footer />
     </div>
   );
