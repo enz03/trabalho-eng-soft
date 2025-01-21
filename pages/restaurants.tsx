@@ -5,7 +5,10 @@ interface Restaurante {
   name: string;
   description: string;
   location: string;
+  user_id: number; // Adicionado para verificar o ID do criador
 }
+
+const USER_ID = 41; // ID do usuário fixo para esta implementação
 
 export default function RestaurantesPage() {
   const [restaurantes, setRestaurantes] = useState<Restaurante[]>([]);
@@ -58,23 +61,33 @@ export default function RestaurantesPage() {
       {error && <p style={{ color: 'red' }}>Erro: {error}</p>}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {restaurantes.map(restaurante => (
-          <div key={restaurante.id} style={{ border: '1px solid #ccc', padding: '16px', margin: '16px', width: '200px' }}>
+          <div
+            key={restaurante.id}
+            style={{
+              border: '1px solid #ccc',
+              padding: '16px',
+              margin: '16px',
+              width: '200px',
+            }}
+          >
             <h2>{restaurante.name}</h2>
             <p>Descrição: {restaurante.description}</p>
             <p>Localização: {restaurante.location}</p>
-            <button
-              style={{
-                backgroundColor: 'red',
-                color: 'white',
-                border: 'none',
-                padding: '8px 16px',
-                cursor: 'pointer',
-                marginTop: '8px',
-              }}
-              onClick={() => handleDelete(restaurante.id)}
-            >
-              Excluir
-            </button>
+            {restaurante.user_id === USER_ID && ( // Verifica se o ID do usuário corresponde
+              <button
+                style={{
+                  backgroundColor: 'red',
+                  color: 'white',
+                  border: 'none',
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  marginTop: '8px',
+                }}
+                onClick={() => handleDelete(restaurante.id)}
+              >
+                Excluir
+              </button>
+            )}
           </div>
         ))}
       </div>
