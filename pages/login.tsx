@@ -1,4 +1,4 @@
-import GoogleLoginComponent from '../src/app/_components/login/GoogleLogin';
+import GoogleLoginComponent from '../src/app/_components/login/google';
 import Navbar from '../src/app/_components/navbar/navbar';
 import Footer from '../src/app/_components/footer/footer';
 

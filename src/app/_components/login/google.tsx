@@ -1,25 +1,23 @@
 "use client";
 import { GoogleLogin } from '@react-oauth/google';
-import { useSession, signIn, signOut } from 'next-auth/react';
-import styles from './login.module.css';
+import { jwtDecode } from 'jwt-decode';
+import { setUser, getUser } from './user';
 
-export default function GoogleLoginComponent() {
-  const { data: session } = useSession();
-
+function GoogleLoginComponent() {
   return (
-    <div>
-      {!session ? (
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            signIn('google', { credential: credentialResponse.credential });
-          }}
-          onError={() => {
-            console.log('Login Failed');
-          }}
-        />
-      ) : (
-        <button onClick={() => signOut()}>Sign out</button>
-      )}
-    </div>
+    <GoogleLogin
+      onSuccess={(credentialResponse) => {
+        const token = credentialResponse.credential?.split('.');
+        token?.shift();
+        token?.splice(1, 1);
+        const User = token?.join('.');
+        setUser(User)
+      }}
+      onError={() => {
+        console.log('Login Failed');
+      }}
+    />
   );
 }
+
+export default GoogleLoginComponent;
