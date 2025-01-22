@@ -4,23 +4,25 @@ import styles from './create_restaurant.module.css';
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useState } from 'react';
 
-
 export default function Cadastro() {
   const [formData, setFormData] = useState({
     user_id: 41,
     name: '',
     description: '',
     location: '',
+    categories: '', // Adicionado
+    price_range: '', // Adicionado
   });
   
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
-  const handleSubmit = (e:any) => {
+  
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     fetch('/api/restaurants', {
@@ -42,10 +44,12 @@ export default function Cadastro() {
         console.log('Restaurante criado com sucesso:', data);
         alert('Restaurante criado com sucesso!');
         setFormData({
-          user_id: 1,
+          user_id: 41,
           name: '',
           description: '',
           location: '',
+          categories: '', // Resetar o valor
+          price_range: '', // Resetar o valor
         });
       })
       .catch((error) => {
@@ -63,49 +67,73 @@ export default function Cadastro() {
     <main className={styles.main}>
       <div className={styles.container}>
         <h1 className={styles.heading}>Criar restaurante</h1>
-        <div className={styles.dividerOu}>
-
-        </div>
+        <div className={styles.dividerOu}></div>
         <form onSubmit={handleSubmit}>
-        <p className={styles.nome}>Escreva o nome do restaurante.</p>
-        <div className={styles.usuario}>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder=""
-            autoComplete="off"
-          />
-        </div>
+          <p className={styles.nome}>Escreva o nome do restaurante.</p>
+          <div className={styles.usuario}>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder=""
+              autoComplete="off"
+            />
+          </div>
 
-        <p className={styles.nome}>Escreva a localização.</p>
-        <div className={styles.usuario}>
-          <input
-            type="text"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder=""
-            autoComplete="off"
-          />
-        </div>
+          <p className={styles.nome}>Escreva a localização.</p>
+          <div className={styles.usuario}>
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder=""
+              autoComplete="off"
+            />
+          </div>
 
-        <p className={styles.nome}>Escreva a descrição do restaurante:</p>
-        <div className={styles.descricao}>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            placeholder="Descrição do restaurante"
-            autoComplete="off"
-          ></textarea>
-        </div>
-        <div className={styles.entrar}>
-          <input type="submit" value="Criar" />
-        </div>
-      </form>
+          <p className={styles.nome}>Escreva a descrição do restaurante:</p>
+          <div className={styles.descricao}>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Descrição do restaurante"
+              autoComplete="off"
+            ></textarea>
+          </div>
 
+          {/* Novo campo: Categorias */}
+          <p className={styles.nome}>Escreva as categorias do restaurante:</p>
+          <div className={styles.usuario}>
+            <input
+              type="text"
+              name="categories"
+              value={formData.categories}
+              onChange={handleChange}
+              placeholder="Ex: Italiano, Japonês"
+              autoComplete="off"
+            />
+          </div>
+
+          {/* Novo campo: Faixa de preço */}
+          <p className={styles.nome}>Escreva a faixa de preço do restaurante:</p>
+          <div className={styles.usuario}>
+            <input
+              type="text"
+              name="price_range"
+              value={formData.price_range}
+              onChange={handleChange}
+              placeholder="Ex: $$, $$$"
+              autoComplete="off"
+            />
+          </div>
+
+          <div className={styles.entrar}>
+            <input type="submit" value="Criar" />
+          </div>
+        </form>
       </div>
     </main>
   );
