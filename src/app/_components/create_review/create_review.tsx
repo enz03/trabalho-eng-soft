@@ -1,4 +1,5 @@
 "use client";
+import { USER_ID } from '~/app/service/usesContext';
 import styles from './create_review.module.css';
 import { useState, useEffect } from 'react';
 
@@ -10,7 +11,7 @@ interface Restaurante {
 export default function CadastroReview() {
   const [formData, setFormData] = useState({
     restaurant_id: '', 
-    user_id: 41,
+    user_id: USER_ID,
     rating: '',
     comment: '',
   });
@@ -71,7 +72,7 @@ export default function CadastroReview() {
         setSuccessMessage('Avaliação criada com sucesso!');
         setFormData({
           restaurant_id: '',
-          user_id: 41,
+          user_id: USER_ID,
           rating: '',
           comment: '',
         });

@@ -1,4 +1,5 @@
 "use client";
+import { USER_ID } from '~/app/service/usesContext';
 import styles from './create_menu.module.css';
 import { useState, useEffect } from 'react';
 
@@ -10,7 +11,7 @@ interface Restaurant {
 export default function CadastroMenu() {
   const [formData, setFormData] = useState({
     restaurant_id: '', // Associar o menu ao restaurante
-    user_id: 41,       // ID do usuário mantido fixo
+    user_id: USER_ID,       // ID do usuário mantido fixo
     name: '',
     description: '',
     price: '',
@@ -66,7 +67,7 @@ export default function CadastroMenu() {
         alert('Menu criado com sucesso!');
         setFormData({
           restaurant_id: '',
-          user_id: 41,
+          user_id: USER_ID,
           name: '',
           description: '',
           price: '',

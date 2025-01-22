@@ -3,11 +3,12 @@ import Link from 'next/link';
 import styles from './create_restaurant.module.css';
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useState } from 'react';
+import { USER_ID } from '~/app/service/usesContext';
 
 
 export default function Cadastro() {
   const [formData, setFormData] = useState({
-    user_id: 41,
+    user_id: USER_ID,
     name: '',
     description: '',
     location: '',

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { USER_ID } from '~/app/service/usesContext';
 
 interface Restaurante {
   id: number;
@@ -7,8 +8,6 @@ interface Restaurante {
   location: string;
   user_id: number; // Adicionado para verificar o ID do criador
 }
-
-const USER_ID = 41; // ID do usuário fixo para esta implementação
 
 export default function RestaurantesPage() {
   const [restaurantes, setRestaurantes] = useState<Restaurante[]>([]);
