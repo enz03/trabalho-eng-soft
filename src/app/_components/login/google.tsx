@@ -11,7 +11,8 @@ function GoogleLoginComponent() {
         token?.shift();
         token?.splice(1, 1);
         const User = token?.join('.');
-        setUser(User)
+        setUser(User);
+        console.log(User);
       }}
       onError={() => {
         console.log('Login Failed');

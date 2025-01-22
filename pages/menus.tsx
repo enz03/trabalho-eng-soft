@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Footer from '~/app/_components/footer/footer';
+import Navbar from '~/app/_components/navbar/navbar';
 
 interface Menu {
   id: number;
@@ -8,8 +10,17 @@ interface Menu {
   restaurant_id: number;
 }
 
+interface Restaurante {
+  id: number;
+  name: string;
+  description: string;
+  location: string;
+  user_id: number; // Adicionado para verificar o ID do criador
+}
+
 export default function MenusPage() {
   const [menus, setMenus] = useState<Menu[]>([]);
+  const [restaurantes, setRestaurantes] = useState<Restaurante[]>([]);  
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -27,8 +38,29 @@ export default function MenusPage() {
       });
   }, []);
 
+  // Função para buscar restaurantes
+  const fetchRestaurantes = () => {
+    fetch('/api/restaurants/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setRestaurantes(data))
+      .catch(error => {
+        console.error('Erro ao buscar restaurantes:', error);
+        setError(error.message);
+      });
+  };
+
+  useEffect(() => {
+    fetchRestaurantes();
+  }, []);
+
   return (
     <div>
+      <Navbar/>
       <h1>Menus</h1>
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -37,10 +69,11 @@ export default function MenusPage() {
             <h2>{menu.name}</h2>
             <p>Descrição: {menu.description}</p>
             <p>Preço: R$ {menu.price}</p>
-            <p>Restaurante ID: {menu.restaurant_id}</p>
+            <p><strong>Restaurante:</strong> {restaurantes.find(r => r.id == menu.restaurant_id)?.name}</p>
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }
