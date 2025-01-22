@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Footer from '~/app/_components/footer/footer';
+import Navbar from '~/app/_components/navbar/navbar';
 import { USER_ID } from '~/app/service/usesContext';
 
 interface Restaurante {
@@ -56,6 +58,8 @@ export default function RestaurantesPage() {
 
   return (
     <div>
+      <Navbar />
+      
       <h1>Restaurantes</h1>
       {error && <p style={{ color: 'red' }}>Erro: {error}</p>}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -90,6 +94,8 @@ export default function RestaurantesPage() {
           </div>
         ))}
       </div>
+      <Footer />
+      
     </div>
   );
 }

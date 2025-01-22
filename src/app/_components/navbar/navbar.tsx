@@ -15,6 +15,7 @@ export default function Navbar() {
                         <Link href="/restaurants" className={styles.linkRest}>Restaurantes</Link>
                         <Link href="/create_restaurant" className={styles.linkRest}>Criar Restaurante</Link>
                         <Link href="/create_review" className={styles.linkRest}>Avaliar</Link>
+                        <Link href="/reviews" className={styles.linkRest}>Ver Avaliações</Link>
                     </span>
                 </div>
                 <div className={styles.divider}></div>

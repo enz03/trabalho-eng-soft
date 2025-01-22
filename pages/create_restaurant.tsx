@@ -5,7 +5,7 @@ import Footer from "../src/app/_components/footer/footer";
 export default function CreateRestaurantPage() {
   return (
     <div>
-      <Navbar />
+      <Navbar />  
       <Create_restaurant />
       <Footer />
     </div>

@@ -18,28 +18,9 @@ export default function Cadastro() {
             <div className={styles.botaoGoogle}>
                 <Google />
             </div>
-            <div className={styles.dividerOu}>
-              <div className={styles.divider}></div>
-              <p className={styles.ou}>ou</p>
-              <div className={styles.divider}></div>
-            </div>
-            <form>
-              <p className={styles.nome}>Insira seu e-mail</p>
-                <div className={styles.usuario}>
-                    <input type="text" name="usuario" id="usuario" placeholder="" autoComplete="off" />
-                </div>
-              <p className={styles.nome}>Crie sua senha</p>
-                <div className={styles.senha}>
-                    <input type="password" name="senha" id="senha" placeholder="" autoComplete="off" />
-                </div>
-                <div className={styles.entrar}>
-                    <input type="submit" value="Cadastrar"/>
-                </div>
-            </form>
             <div className={styles.span}>
                 <p className={styles.cadastre}>Já possui conta? Faça <Link href="./login" className={styles.login}>login</Link></p>
             </div>
-
         </div>
     </main>
   );
