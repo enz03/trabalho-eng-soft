@@ -34,7 +34,7 @@ export function Contato() {
                         <p className={styles.matricula4}>211038262@aluno.unb.br</p>
                     </div>
                     <div className={styles.pessoa5}>
-                        <Link href="src/app/page/imagens" className={styles.logo}> <Image src="/joao.jpeg" alt="joao" width={150} height={200}/></Link>
+                        <Link href="src/app/page/imagens" className={styles.logo}> <Image src="/joao.jpeg" alt="joao" width={150} height={150}/></Link>
                         <h2 className={styles.nome5}>João Ribeiro</h2>
                         <p className={styles.matricula5}>222001322@aluno.unb.br</p>
                     </div>

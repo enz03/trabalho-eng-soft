@@ -28,7 +28,7 @@
 
 
 /* google */
-.botaoGoogle {
+/*.botaoGoogle {
   display: inline-block;
   text-align: center;
   width: 100%;
@@ -50,6 +50,28 @@
   float: left;
   margin-top: 6px;
   margin-left: 2px;
+}
+*/
+
+/* login.module.css */
+.botaoGoogle {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.botaoGoogle button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.botaoGoogle button:hover {
+  background-color: #f5f5f5;
 }
 
 
@@ -112,4 +134,30 @@
 .link {
   text-decoration: underline;
   font-size: 11px;
+}
+
+/* login.module.css */
+.usuario input,
+.senha input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.entrar input {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.entrar input:hover {
+  background-color: #0056b3;
 }

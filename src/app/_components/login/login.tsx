@@ -6,12 +6,11 @@ import Google from './google';
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation';
 
-
 export default function Login() {
   const session = useSession();
-//   const router = useRouter();
+  // const router = useRouter();
   function handleClickSignIn() {
-    signIn("google")
+    signIn("google");
     // router.push("/")
   }
 
