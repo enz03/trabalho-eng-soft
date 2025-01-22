@@ -3,7 +3,13 @@
 Este é um projeto de exemplo para um sistema de gerenciamento de restaurantes, desenvolvido utilizando Next.js para o frontend e Rails para o backend.
 
 ## Integrantes
-- Enzo Zanetti Celentano - 211026495
+Enzo Zanetti Celentano - 211026495
+João Davi Ribeiro Tavares Leite - 222001322
+Nicole Ferreira Gomes - 221030858
+Luís Augusto da Silveira Cavalcanti - 231003415
+Italo Braga de Paulo - 221020922
+Lucas Correa Boaventura - 211038262
+
 
 ## Introdução
 Este repositório contém o código-fonte e a documentação do nosso projeto de Engenharia de Software.
